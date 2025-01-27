@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export default function Register() {
+/*
+- Validate user account, if valid, redirecto to dashboard but if not, show generic error message
+*/
+
+export default function Login() {
   return (
     <div>
       <form className="flex flex-col gap-4">
@@ -23,16 +27,13 @@ export default function Register() {
                     hover:bg-primary-600 hover:scale-[1.01]
                     active:scale-[0.99]"
         >
-          Registrarme
+          Iniciar sesión
         </button>
       </form>
-      <p className="text-neutrals-darkGray text-xs mt-2 leading-relaxed">
-        Al registrarte, aceptas nuestros términos y condiciones.
-      </p>
       <p className="mt-4 text-neutrals-darkGray">
-        Si ya tienes una cuenta, puedes{" "}
-        <Link href="/login" className="text-primary-500 font-bold underline">
-          Iniciar sesión
+        No tienes una cuenta?{" "}
+        <Link href="/registro" className="text-primary-500 font-bold underline">
+          Regístrate ahora
         </Link>
       </p>
     </div>

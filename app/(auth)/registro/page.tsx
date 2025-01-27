@@ -72,39 +72,40 @@ export default function Registro() {
   ];
 
   return (
-    <main className="w-full max-w-5xl mx-auto h-full rounded-3xl bg-neutrals-white p-8 shadow-md">
-      <header className="mb-8">
-        <h1 className="text-center md:text-start text-neutrals-black text-2xl md:text-3xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4">
-          ¡Bienvenido a MiDoctor!
-        </h1>
-        <p className="text-center mx-auto md:mx-0 md:text-start text-neutrals-darkGray font-medium text-lg md:text-xl max-w-[30ch]">
-          <Balancer>
-            Simplifica la gestión de tus citas médicas en un solo lugar
-          </Balancer>
-        </p>
-      </header>
+    <div className="flex flex-col justify-center">
+      <main className="w-full md:min-h-[37.5rem] max-w-5xl mx-auto rounded-3xl bg-neutrals-white p-8 shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start h-full">
+          <div>
+            <header className="mb-8">
+              <h1 className="text-center md:text-start text-neutrals-black text-2xl md:text-3xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4">
+                ¡Bienvenido a MiDoctor!
+              </h1>
+              <p className="text-center mx-auto md:mx-0 md:text-start text-neutrals-darkGray font-medium text-lg md:text-xl max-w-[30ch]">
+                <Balancer>
+                  Simplifica la gestión de tus citas médicas en un solo lugar
+                </Balancer>
+              </p>
+            </header>
+            <Register />
+          </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        <div className="">
-          <Register />
+          <div className="flex items-center justify-center h-full">
+            <ul className="flex flex-col gap-4 list-none" role="list">
+              {SERVICES.map((service, i) => (
+                <li
+                  className="p-4 rounded-2xl bg-neutrals-lightGray shadow-xs flex gap-4 items-center min-h-28 md:min-h-20
+              font-semibold text-neutrals-darkGray
+            "
+                  key={i}
+                >
+                  <span aria-hidden="true">{service.icon}</span>
+                  {service.text}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-
-        <div className="flex items-center justify-center h-full">
-          <ul className="flex flex-col gap-4 list-none">
-            {SERVICES.map((service, i) => (
-              <li
-                className="p-4 rounded-2xl bg-neutrals-lightGray shadow-xs flex gap-4 items-center min-h-28 md:min-h-20
-                  font-semibold text-neutrals-darkGray
-                "
-                key={i}
-              >
-                <span>{service.icon}</span>
-                {service.text}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
