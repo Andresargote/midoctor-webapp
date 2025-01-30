@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <div>
-      <form className="flex flex-col gap-4">
+      <form className="flex flex-col gap-5">
         <div className="flex flex-col gap-1">
           <label htmlFor="email" className="text-neutrals-darkGray">
             Correo electrónico

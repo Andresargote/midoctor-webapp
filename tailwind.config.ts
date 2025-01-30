@@ -14,6 +14,7 @@ export default {
           darkGray: "#333333",
           lightGray: "#F7F7F7",
           white: "#FFFFFF",
+          dirtyWhite: "#F7F7F7",
         },
         primary: {
           10: "#F5F8FF",
